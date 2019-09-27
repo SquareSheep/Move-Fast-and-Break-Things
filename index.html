@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type = "text/javascript" src="classes.js"></script>
+		<script type = "text/javascript" src="main.js"></script>
+		<script type = "text/javascript" src="levels.js"></script>
+		<script type = "text/javascript" src="functions.js"></script>
+
+		<style>
+			#gameDiv {
+				background-color:rgba(0,0,0,1);
+				position:relative;
+				overflow:hidden;
+				padding:0px;
+				margin-left:0%;
+				width:100%;
+			}
+			body {
+			background-color:rgba(0,0,0,1);
+			}
+			#ctxCanvas {
+				position:absolute;
+				left:0px;
+				top:0px;
+				z-index:2;
+				width:700px;
+				height:700px;
+				padding-left: 0px;
+				padding-right: 0px;
+				display:block;
+				image-rendering: optimizeSpeed;
+				image-rendering: -moz-crisp-edges;
+				image-rendering: -webkit-optimize-contrast;
+				image-rendering: -o-crisp-edges;
+				image-rendering: crisp-edges;
+				-ms-interpolation-mode: nearest-neighbor;
+			}
+			#otherCanvas {
+				width:700px;
+				height:700px;
+			}
+			#backCanvas {
+				width:700px;
+				height:700px;
+				position:absolute;
+				left:0px;
+				top:0px;
+				z-index:1;
+			}
+			#foreCanvas {
+				width:700px;
+				height:700px;
+				position:absolute;
+				left:0px;
+				top:0px;
+				z-index:3;
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		</style>
+	</head>
+	<body onload = "start()" onmousedown = "mouseDown(event)">
+	<br>
+	<div id="gameDiv">
+		<canvas id = "foreCanvas" onmouseup = "mouseUp(event)"  overflow = "hidden"></canvas>
+		<canvas id = "ctxCanvas"></canvas>
+		<canvas id = "otherCanvas"></canvas>
+		<canvas id = "backCanvas" overflow = "hidden"></canvas>
+	</div>
+	</body>
+</html>
